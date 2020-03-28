@@ -39,7 +39,8 @@ export default class Index extends React.Component {
         <section className="section">
           <div className="container">
             <div className="content">
-              <h1>Contact</h1>
+              <h1>Add a Business</h1>
+              <p>To add a business, please fill out the form below with as much info as you can provide and we'll add it within 24 hours.</p>
               <form
                 name="contact"
                 method="post"
@@ -49,7 +50,7 @@ export default class Index extends React.Component {
                 onSubmit={this.handleSubmit}
               >
                 {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
-                <input type="hidden" name="form-name" value="contact" />
+                <input type="hidden" name="form-name" value="addBusiness" />
                 <div hidden>
                   <label>
                     Don’t fill this out:{' '}
@@ -73,7 +74,7 @@ export default class Index extends React.Component {
                 </div>
                 <div className="field">
                   <label className="label" htmlFor={'email'}>
-                    Email
+                    Your Email
                   </label>
                   <div className="control">
                     <input
@@ -87,8 +88,94 @@ export default class Index extends React.Component {
                   </div>
                 </div>
                 <div className="field">
+                  <label className="label" htmlFor={'businessName'}>
+                    Business Name
+                  </label>
+                  <div className="control">
+                    <input
+                      className="input"
+                      type={'text'}
+                      name={'businessName'}
+                      onChange={this.handleChange}
+                      id={'businessName'}
+                      required={true}
+                    />
+                  </div>
+                </div>
+                <div className="field">
+                  <label className="label" htmlFor={'businessInfo'}>
+                    Business Info (website, address, etc.)
+                  </label>
+                  <div className="control">
+                    <textarea
+                      className="textarea"
+                      name={'businessInfo'}
+                      onChange={this.handleChange}
+                      id={'businessInfo'}
+                      required={true}
+                    />
+                  </div>
+                </div>
+                <div className="field">
+                  <label className="label" htmlFor={'businessCat'}>
+                    Business Categories<br />(add as many as you'd prefer, we may group similar ones together)
+                  </label>
+                  <div className="control">
+                    <input
+                      className="input"
+                      type={'text'}
+                      name={'businessCat'}
+                      onChange={this.handleChange}
+                      id={'businessCat'}
+                      required={false}
+                    />
+                  </div>
+                </div>
+                <div className="field">
+                  <label className="label" htmlFor={'hours'}>
+                    Hours
+                  </label>
+                  <div className="control">
+                    <textarea
+                      className="textarea"
+                      name={'hours'}
+                      onChange={this.handleChange}
+                      id={'hours'}
+                      required={false}
+                    />
+                  </div>
+                </div>
+                <div className="field">
+                  <label className="label" htmlFor={'rules'}>
+                    Rules to abide by while shopping
+                  </label>
+                  <div className="control">
+                    <textarea
+                      className="textarea"
+                      name={'rules'}
+                      onChange={this.handleChange}
+                      id={'rules'}
+                      required={false}
+                    />
+                  </div>
+                </div>
+                <div className="field">
+                  <label className="label" htmlFor={'support'}>
+                    Ways to support the business (gift cards, online, etc)
+                  </label>
+                  <div className="control">
+                    <textarea
+                      className="textarea"
+                      name={'support'}
+                      onChange={this.handleChange}
+                      id={'support'}
+                      required={false}
+                    />
+                  </div>
+                </div>
+                <div className="field">
                   <label className="label" htmlFor={'message'}>
-                    Message
+                    Anything else we should know?
                   </label>
                   <div className="control">
                     <textarea
@@ -96,7 +183,7 @@ export default class Index extends React.Component {
                       name={'message'}
                       onChange={this.handleChange}
                       id={'message'}
-                      required={true}
+                      required={false}
                     />
                   </div>
                 </div>

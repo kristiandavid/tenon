@@ -8,6 +8,8 @@ backend:
     uploadMedia: '[skip ci] Upload “{{path}}”'
     deleteMedia: '[skip ci] Delete “{{path}}”'
 
+local_backend: true
+
 media_folder: static/img
 public_folder: /img
 
@@ -22,9 +24,24 @@ collections:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Description", name: "description", widget: "text"}
-      - {label: "Featured Post", name: "featuredpost", widget: "boolean"}
       - {label: "Featured Image", name: "featuredimage", widget: image}
       - {label: "Body", name: "body", widget: "markdown"}
+
+  - name: "businesses"
+    label: "Businesses"
+    folder: "src/pages/businesses"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "business-post"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Featured Image", name: "featuredimage", widget: image}
+      - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "Open", name: "open", widget: "boolean"}
+      - {label: "Hours", name: "hours", widget: "markdown"}
+      - {label: "Shop Rules", name: "rules", widget: "markdown"}
+      - {label: "Ways to Support", name: "support", widget: "markdown"}
       - {label: "Tags", name: "tags", widget: "list"}
 
   - name: "businesses"
