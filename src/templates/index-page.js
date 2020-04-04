@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { Link, graphql } from 'gatsby'
 
 import Layout from '../components/Layout'
-import BusinessRoll from '../components/BusinessRoll'
+import BusinessHomeRoll from '../components/BusinessHomeRoll'
 
 export const IndexPageTemplate = ({
   image,
@@ -83,7 +83,7 @@ export const IndexPageTemplate = ({
                     <h3 className="has-text-weight-semibold is-size-2">
                       Latest Businesses Updated
                     </h3>
-                    <BusinessRoll />
+                    <BusinessHomeRoll />
                     <div className="column is-12 has-text-centered indexAllBusinesses">
                       <Link className="btn" to="/businesses">
                         View all businesses
