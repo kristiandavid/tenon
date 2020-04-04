@@ -21,8 +21,8 @@ const TagsPage = ({
             className="column is-10 is-offset-1"
             style={{ marginBottom: '6rem' }}
           >
-            <h1 className="title is-size-2 is-bold-light">Tags</h1>
-            <ul className="taglist">
+            <h1 className="title is-size-2 is-bold-light">Categories</h1>
+            <ul className="taglist tagsList">
               {group.map(tag => (
                 <li key={tag.fieldValue}>
                   <Link to={`/tags/${kebabCase(tag.fieldValue)}/`}>
@@ -51,6 +51,21 @@ export const tagPageQuery = graphql`
       group(field: frontmatter___tags) {
         fieldValue
         totalCount
+      	edges {
+      	  node {
+            fields {
+              slug
+            }
+      	    id
+            frontmatter {
+              title
+              description
+              date
+              hours
+              support
+            }
+      	  }
+      	}
       }
     }
   }

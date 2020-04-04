@@ -1,17 +1,31 @@
 @import "~bulma/sass/utilities/initial-variables"
 
 // Config vars
-// Kaldi logo brand color: #FD461E
-$kaldi-red: #D64000
-$kaldi-red-invert: #fff
+$tenon-red: #A13639
+$tenon-red-invert: #fff
 
-$primary: $kaldi-red
-$primary-invert: $kaldi-red-invert
+$primary: $tenon-red
+$primary-invert: $tenon-red-invert
 $body-color: #333
 $black: #2b2523
 
 .navbar .navbar-menu
   box-shadow:none !important
+
+.content .homeTaglist
+  list-style: none
+  margin-bottom: 0
+  margin-left: 0
+  margin-right: 1.5rem
+  margin-top: 1.5rem
+  display: flex
+  flex-wrap: wrap
+  justify-content: left
+  align-items: center
+  li
+    padding: 0 1rem 1rem 0
+    margin-bottom: 1.5rem
+    margin-top: 0
 
 .content .taglist
   list-style: none
@@ -61,9 +75,9 @@ $black: #2b2523
     border-radius: .25rem
     text-decoration: none
     font-weight: 700
-    color: #CC3700
+    color: #A13639
     text-align: center
-    -webkit-box-shadow: inset 0 0 0 2px #CC3700
+    -webkit-box-shadow: inset 0 0 0 2px #A13639
     box-shadow: inset 0 0 0 2px #f40
     -webkit-transition: all .15s ease
     transition: all .15s ease
@@ -81,16 +95,16 @@ $black: #2b2523
 .navbar-brand .navbar-item.logo
   padding: 0 1rem
 footer.footer
-  padding: 3rem 0rem 0rem
+  padding: 1rem 0rem
   background-color: transparent
 
 //Menu overrides
 $menu-item-color: $white-ter
 $menu-item-hover-color: $black !important
 $menu-item-hover-background-color: $black
-$menu-item-active-color: $kaldi-red-invert
-$menu-item-active-background-color:	$kaldi-red-invert
-$menu-list-border-left: 1px solid $kaldi-red-invert
+$menu-item-active-color: $tenon-red-invert
+$menu-item-active-background-color:	$tenon-red-invert
+$menu-list-border-left: 1px solid $tenon-red-invert
 $menu-label-color: $white-ter
 
 
@@ -138,3 +152,28 @@ $menu-label-color: $white-ter
     text-align: center;
     max-width: 70%;
     margin: 0 0 1em;
+
+
+.grid
+  display: grid
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr))
+  grid-gap: 20px
+  .is-child
+    height: 100%
+
+
+.tagsList
+  font-size: 1.5rem
+  a
+    color: $tenon-red
+
+
+.title:not(:last-child).tagsH1
+  margin-bottom: 0;
+
+.content p:not(:last-child).allTags
+  margin-bottom: 2rem
+
+.allTags
+  a
+    color: $tenon-red
