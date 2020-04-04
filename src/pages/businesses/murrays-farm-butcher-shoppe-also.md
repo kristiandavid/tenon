@@ -4,6 +4,7 @@ title: Murray's Farm & Butcher Shoppe also
 date: 2020-03-31T01:15:36.247Z
 featuredimage: /img/47694813_368555113973315_1735145385761964032_n.jpg
 open: true
+otherContact: instagram and stuff
 hours: 'Mon-Sun: 12pm-6pm'
 rules: don't be a dick
 support: >-
@@ -26,7 +27,3 @@ tags:
   - food
   - butcher
 ---
-Hamilton's Only Farmer Owned Butcher Shoppe. Hamilton Spectator Readers' Choice Award - BEST BUTCHER SHOPPE 2018.
-
-182 Ottawa Street North, Hamilton,\
-ON L8H 3Z5, Canada

@@ -4,7 +4,7 @@ import { kebabCase } from 'lodash'
 import { Link, graphql, StaticQuery } from 'gatsby'
 import PreviewCompatibleImage from './PreviewCompatibleImage'
 
-class BusinessRoll extends React.Component {
+class BusinessHomeRoll extends React.Component {
   render() {
     const { data } = this.props
     const { edges: posts } = data.allMarkdownRemark
@@ -12,7 +12,7 @@ class BusinessRoll extends React.Component {
     return (
       <div className="grid">
         {posts &&
-          posts.map(({ node: post }) => (
+          posts.slice(0,8).map(({ node: post }) => (
             <div className="is-parent" key={post.id}>
               <article
                 className={`business-list-item tile is-child box notification`}
@@ -61,7 +61,7 @@ class BusinessRoll extends React.Component {
   }
 }
 
-BusinessRoll.propTypes = {
+BusinessHomeRoll.propTypes = {
   data: PropTypes.shape({
     allMarkdownRemark: PropTypes.shape({
       edges: PropTypes.array,
@@ -72,7 +72,7 @@ BusinessRoll.propTypes = {
 export default () => (
   <StaticQuery
     query={graphql`
-      query BusinessRollQuery {
+      query BusinessHomeRollQuery {
         allMarkdownRemark(
           sort: { order: DESC, fields: [frontmatter___date] }
           filter: { frontmatter: { templateKey: { eq: "business-post" } } }
@@ -102,6 +102,6 @@ export default () => (
         }
       }
     `}
-    render={(data, count, limit) => <BusinessRoll data={data} count={count} />}
+    render={(data, count, limit) => <BusinessHomeRoll data={data} count={count} />}
   />
 )
