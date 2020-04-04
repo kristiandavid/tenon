@@ -40,7 +40,7 @@ export default class Index extends React.Component {
           <div className="container">
             <div className="content">
               <h1>Add a Business</h1>
-              <p>To add a business, please fill out the form below with as much info as you can provide and we'll add it within 24 hours.</p>
+              <p>To add or update a business, please fill out the form below with as much info as you can provide and we'll add it within 24 hours.</p>
               <form
                 name="contact"
                 method="post"
@@ -54,7 +54,7 @@ export default class Index extends React.Component {
                 <div hidden>
                   <label>
                     Don’t fill this out:{' '}
-                    <input name="bot-field" onChange={this.handleChange} />
+                    <input name="bot-field" onBlur={this.handleChange} />
                   </label>
                 </div>
                 <div className="field">
@@ -66,7 +66,7 @@ export default class Index extends React.Component {
                       className="input"
                       type={'text'}
                       name={'name'}
-                      onChange={this.handleChange}
+                      onBlur={this.handleChange}
                       id={'name'}
                       required={true}
                     />
@@ -81,10 +81,26 @@ export default class Index extends React.Component {
                       className="input"
                       type={'email'}
                       name={'email'}
-                      onChange={this.handleChange}
+                      onBlur={this.handleChange}
                       id={'email'}
                       required={true}
                     />
+                  </div>
+                </div>
+                <div className="field">
+                  <label className="label" htmlFor={'newUpdate'}>
+                    Are you submitting a new business or updating an existing one?
+                  </label>
+                  <div className="control">
+                    <select
+                      className="input"
+                      name={'newUpdate'}
+                      onBlur={this.handleChange}
+                      id={'newUpdate'}
+                      required={true}>
+                      <option value="new">Submitting a new business</option>
+                      <option value="update">Updating an existing business</option>
+                    </select>
                   </div>
                 </div>
                 <div className="field">
@@ -96,7 +112,7 @@ export default class Index extends React.Component {
                       className="input"
                       type={'text'}
                       name={'businessName'}
-                      onChange={this.handleChange}
+                      onBlur={this.handleChange}
                       id={'businessName'}
                       required={true}
                     />
@@ -104,13 +120,13 @@ export default class Index extends React.Component {
                 </div>
                 <div className="field">
                   <label className="label" htmlFor={'businessInfo'}>
-                    Business Info (website, address, etc.)
+                    Business Contact Info (website, address, etc.)
                   </label>
                   <div className="control">
                     <textarea
                       className="textarea"
                       name={'businessInfo'}
-                      onChange={this.handleChange}
+                      onBlur={this.handleChange}
                       id={'businessInfo'}
                       required={true}
                     />
@@ -118,14 +134,14 @@ export default class Index extends React.Component {
                 </div>
                 <div className="field">
                   <label className="label" htmlFor={'businessCat'}>
-                    Business Categories<br />(add as many as you'd prefer, we may group similar ones together)
+                    Business Category/Categories<br />(add as many as you'd prefer, we may group similar ones together)
                   </label>
                   <div className="control">
                     <input
                       className="input"
                       type={'text'}
                       name={'businessCat'}
-                      onChange={this.handleChange}
+                      onBlur={this.handleChange}
                       id={'businessCat'}
                       required={false}
                     />
@@ -133,13 +149,13 @@ export default class Index extends React.Component {
                 </div>
                 <div className="field">
                   <label className="label" htmlFor={'hours'}>
-                    Hours
+                    Business Hours
                   </label>
                   <div className="control">
                     <textarea
                       className="textarea"
                       name={'hours'}
-                      onChange={this.handleChange}
+                      onBlur={this.handleChange}
                       id={'hours'}
                       required={false}
                     />
@@ -153,7 +169,7 @@ export default class Index extends React.Component {
                     <textarea
                       className="textarea"
                       name={'rules'}
-                      onChange={this.handleChange}
+                      onBlur={this.handleChange}
                       id={'rules'}
                       required={false}
                     />
@@ -167,7 +183,7 @@ export default class Index extends React.Component {
                     <textarea
                       className="textarea"
                       name={'support'}
-                      onChange={this.handleChange}
+                      onBlur={this.handleChange}
                       id={'support'}
                       required={false}
                     />
@@ -181,7 +197,7 @@ export default class Index extends React.Component {
                     <textarea
                       className="textarea"
                       name={'message'}
-                      onChange={this.handleChange}
+                      onBlur={this.handleChange}
                       id={'message'}
                       required={false}
                     />
