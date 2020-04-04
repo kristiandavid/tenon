@@ -202,7 +202,7 @@ $menu-label-color: $white-ter
 .openBusiness
   margin-bottom: 2rem
   font-weight: bold
-  font-size: 1.5rem
+  font-size: 1.25rem
   display: inline-block
   margin-left: 1rem
   .openYes
@@ -212,13 +212,26 @@ $menu-label-color: $white-ter
 
 
 .businessPageGrid
+  display: grid;
+  grid-template-columns: repeat(2, 1fr)
   .title:not(:last-child)
     margin-bottom: 0
 
+  a
+    color: $tenon-red
+
+  .col1
+    grid-column: 1/-1
+
+  .businessImg
+    width: 6.25rem
+    margin-right: 1rem
+
 .businessTextSection
-  margin-bottom: 2rem
+  margin-bottom: 1.25rem
   h2
-    font-size: 1.25rem
+    font-size: 1.125rem
+    margin-bottom: 0
 
 .productMapLink
   display: block
