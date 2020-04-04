@@ -1,12 +1,17 @@
 ---
 templateKey: business-post
-open: true
 title: some other place
 date: 2020-04-04T18:17:07.079Z
-featuredimage: /img/flavor_wheel.jpg
+featuredimage: /img/47694813_368555113973315_1735145385761964032_n.jpg
+open: true
+address: test
+website: test
+phone: fdsfsfs
+otherContact: sffsdsfsdf
 hours: some time to another time
-support: buy stuff
 rules: don't be a dick
+support: buy stuff
+additionalInfo: fdfddsfdsf
 tags:
   - coffee
 ---

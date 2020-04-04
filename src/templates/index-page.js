@@ -84,7 +84,7 @@ export const IndexPageTemplate = ({
                       Latest Businesses Updated
                     </h3>
                     <BusinessRoll />
-                    <div className="column is-12 has-text-centered">
+                    <div className="column is-12 has-text-centered indexAllBusinesses">
                       <Link className="btn" to="/businesses">
                         View all businesses
                       </Link>
@@ -156,20 +156,6 @@ export const pageQuery = graphql`
           description
         }
         description
-        intro {
-          blurbs {
-            image {
-              childImageSharp {
-                fluid(maxWidth: 240, quality: 64) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-            text
-          }
-          heading
-          description
-        }
       }
     }
   }

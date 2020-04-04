@@ -119,8 +119,42 @@ export default class Index extends React.Component {
                   </div>
                 </div>
                 <div className="field">
+                  <label className="label" htmlFor={'newUpdate'}>
+                    Are you submitting a new business or updating an existing one?
+                  </label>
+                  <div className="control">
+                    <select
+                      className="input"
+                      name={'newUpdate'}
+                      onBlur={this.handleChange}
+                      id={'newUpdate'}
+                      required={true}>
+                      <option value="">Select an option</option>
+                      <option value="new">Submitting a new business</option>
+                      <option value="update">Updating an existing business</option>
+                    </select>
+                  </div>
+                </div>
+                <div className="field">
+                  <label className="label" htmlFor={'openClosed'}>
+                    Is this business open during the pandemic?
+                  </label>
+                  <div className="control">
+                    <select
+                      className="input"
+                      name={'openClosed'}
+                      onBlur={this.handleChange}
+                      id={'openClosed'}
+                      required={true}>
+                      <option value="">Select an option</option>
+                      <option value="yes">Yes, the business is open</option>
+                      <option value="no">No, sadly we've had to close for the time being</option>
+                    </select>
+                  </div>
+                </div>
+                <div className="field">
                   <label className="label" htmlFor={'businessInfo'}>
-                    Business Contact Info (website, address, etc.)
+                    Business Contact Info (website, address, social media etc.)
                   </label>
                   <div className="control">
                     <textarea
@@ -134,7 +168,7 @@ export default class Index extends React.Component {
                 </div>
                 <div className="field">
                   <label className="label" htmlFor={'businessCat'}>
-                    Business Category/Categories<br />(add as many as you'd prefer, we may group similar ones together)
+                    Business Category/Categories<br />(add as many as you'd like, we may group similar ones together)
                   </label>
                   <div className="control">
                     <input
