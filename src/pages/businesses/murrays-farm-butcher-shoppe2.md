@@ -2,10 +2,10 @@
 templateKey: business-post
 title: Murray's Farm & Butcher Shoppe3
 date: 2020-03-31T01:02:10.149Z
-featuredimage: /img/47694813_368555113973315_1735145385761964032_n.jpg
+featuredimage: /img/blog-index.jpg
 open: true
 hours: 'Mon-Sun: 12pm-6pm'
-rules: don't be a dick
+rules: don't be a jerk
 support: >-
   Bacon ipsum dolor amet ball tip spare ribs doner pig, beef pancetta pork belly
   drumstick kielbasa tenderloin. Venison prosciutto strip steak andouille,
@@ -25,6 +25,7 @@ support: >-
 tags:
   - food
   - butcher
+  - produce
 ---
 Hamilton's Only Farmer Owned Butcher Shoppe. Hamilton Spectator Readers' Choice Award - BEST BUTCHER SHOPPE 2018.
 

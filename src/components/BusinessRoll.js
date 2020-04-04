@@ -37,7 +37,7 @@ class BusinessRoll extends React.Component {
                     </Link>
                   </p>
                 </header>
-                <p>
+                <div>
                   {post.frontmatter.tags && post.frontmatter.tags.length ? (
                     <div style={{ marginTop: `1rem` }}>
                       <ul className="homeTaglist">
@@ -52,7 +52,7 @@ class BusinessRoll extends React.Component {
                   <Link className="button" to={post.fields.slug}>
                     More Info →
                   </Link>
-                </p>
+                </div>
               </article>
             </div>
           ))}

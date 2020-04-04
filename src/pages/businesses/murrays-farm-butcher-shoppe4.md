@@ -2,7 +2,7 @@
 templateKey: business-post
 title: Murray's Farm & Butcher Shoppe5
 date: 2020-03-31T01:02:21.638Z
-featuredimage: /img/47694813_368555113973315_1735145385761964032_n.jpg
+featuredimage: /img/products-grid2.jpg
 open: true
 hours: 'Mon-Sun: 12pm-6pm'
 rules: don't be a dick
