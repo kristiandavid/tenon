@@ -8,12 +8,13 @@ heading: >-
 subheading: (subheading)
 mainpitch:
   title: What is this site?
-  description: Rally Cry is a listing of small businesses in Hamilton...yada yada yada
-description: >-
-  Kaldi is the ultimate spot for coffee lovers who want to learn about their
-  java’s origin and support the farmers that grew it. We take coffee production,
-  roasting and brewing seriously and we’re glad to pass that knowledge to
-  anyone.
+  description: >-
+    Rally Cry is a listing of small businesses in Hamilton that could use your
+    support through this COVID-19 pandemic, and beyond.  While you should
+    practice social distancing, if you absolutely need to go out for
+    food/supplies/etc, we encourage you to support small businesses and adhere
+    to their rules for shopping to keep them in business and keep us all safe.
+description: t
 intro:
   blurbs:
     - image: /img/coffee.png
@@ -43,8 +44,8 @@ intro:
         space where you can hang out with fellow coffee lovers and learn about
         coffee making techniques. All of the artwork on display there is for
         sale. The full price you pay goes to the artist.
-  heading: What we offer
-  description: Hi
+  heading: blah
+  description: blah
 main:
   heading: Great coffee with no compromises
   description: >
@@ -60,5 +61,5 @@ main:
     image: /img/products-grid2.jpg
   image3:
     alt: Coffee beans
-    image: /img/products-grid1.jpg
+    image: /img/blog-index.jpg
 ---

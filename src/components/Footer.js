@@ -26,6 +26,11 @@ const Footer = class extends React.Component {
                         Add a business
                       </Link>
                     </li>
+                    <li>
+                      <Link className="navbar-item" to="/connect">
+                        Connect with us
+                      </Link>
+                    </li>
                   </ul>
                 </section>
               </div>
