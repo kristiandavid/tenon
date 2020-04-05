@@ -4,14 +4,14 @@ title: some other place
 date: 2020-04-04T18:17:07.079Z
 featuredimage: /img/47694813_368555113973315_1735145385761964032_n.jpg
 open: true
-address: test
-website: test
-phone: fdsfsfs
-otherContact: sffsdsfsdf
+address: '21 Edinburgh Ave, Hamilton ON'
+website: rallycry.ca
+phone: 555.555.5555
+otherContact: '[instagram](#)'
 hours: some time to another time
 rules: don't be a dick
 support: buy stuff
-additionalInfo: fdfddsfdsf
+additionalInfo: that's pretty much it
 tags:
   - coffee
 ---
