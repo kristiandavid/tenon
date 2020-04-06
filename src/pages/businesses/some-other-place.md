@@ -7,7 +7,7 @@ open: true
 address: '21 Edinburgh Ave, Hamilton ON'
 website: rallycry.ca
 phone: 555.555.5555
-otherContact: '[instagram](#)'
+otherContact: <a href="#">test</a>
 hours: some time to another time
 rules: don't be a dick
 support: buy stuff

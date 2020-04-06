@@ -50,11 +50,11 @@ export const BusinessPostTemplate = ({
           <div className="column is-12 businessPageGrid">
 
             <div className="col1">
+              <img className="businessImg" src={!!featuredimage.childImageSharp ? featuredimage.childImageSharp.fluid.src : featuredimage} alt={title} />
               <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
-                <img className="businessImg" src={!!featuredimage.childImageSharp ? featuredimage.childImageSharp.fluid.src : featuredimage} alt={title} />
                 {title}
-                <div className="openBusiness">{open === true ? (<div className="openYes">Open</div>) : (<div className="openNo">Closed</div>)}</div>
               </h1>
+              <div className="openBusiness">{open === true ? (<div className="openYes">Open: Modified Hours</div>) : (<div className="openNo">Closed</div>)}</div>
             </div>
 
             <div className="col2">
@@ -66,10 +66,10 @@ export const BusinessPostTemplate = ({
                 ) : null}
               <BusinessPostText theContent={phone} leadingText="Phone" />
               <BusinessPostText theContent={otherContact} leadingText="Other ways to get in touch" />
-              <BusinessPostText theContent={hours} leadingText="Hours" />
             </div>
 
             <div className="col3">
+              <BusinessPostText theContent={hours} leadingText="Hours" />
               <BusinessPostText theContent={rules} leadingText="Rules to follow when visiting the store" />
               <BusinessPostText theContent={support} leadingText="Other ways you can support us" />
               <BusinessPostText theContent={additionalInfo} leadingText="Additional Info" />
@@ -101,7 +101,6 @@ BusinessPostTemplate.propTypes = {
   title: PropTypes.string,
   open: PropTypes.bool,
   otherContact: PropTypes.string,
-  // otherContactComponent: PropTypes.func,
   address:PropTypes.string,
   website:PropTypes.string,
   featuredimage:PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
@@ -115,7 +114,6 @@ BusinessPostTemplate.propTypes = {
 
 const BusinessPost = ({ data }) => {
   const { markdownRemark: post } = data
-  console.log("data: ", post);
 
   return (
     <Layout>

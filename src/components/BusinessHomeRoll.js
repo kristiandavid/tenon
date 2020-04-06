@@ -15,7 +15,7 @@ class BusinessHomeRoll extends React.Component {
           posts.slice(0,8).map(({ node: post }) => (
             <div className="is-parent" key={post.id}>
               <article
-                className={`business-list-item tile is-child box notification`}
+                className={`business-list-item tile is-child box notification gridBusinessRoll`}
               >
                 <header>
                   {post.frontmatter.featuredimage ? (
@@ -39,7 +39,7 @@ class BusinessHomeRoll extends React.Component {
                 </header>
                 <div>
                   {post.frontmatter.tags && post.frontmatter.tags.length ? (
-                    <div style={{ marginTop: `1rem` }}>
+                    <div>
                       <ul className="homeTaglist">
                         {post.frontmatter.tags.map(tag => (
                           <li key={tag + `tag`}>
@@ -49,10 +49,10 @@ class BusinessHomeRoll extends React.Component {
                       </ul>
                     </div>
                   ) : null}
-                  <Link className="button" to={post.fields.slug}>
-                    More Info →
-                  </Link>
                 </div>
+                <Link className="button" to={post.fields.slug}>
+                  More Info →
+                </Link>
               </article>
             </div>
           ))}

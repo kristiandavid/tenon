@@ -15,7 +15,7 @@ class BusinessRoll extends React.Component {
           posts.map(({ node: post }) => (
             <div className="is-parent" key={post.id}>
               <article
-                className={`business-list-item tile is-child box notification`}
+                className={`business-list-item tile is-child box notification gridBusinessRoll`}
               >
                 <header>
                   {post.frontmatter.featuredimage ? (
@@ -28,14 +28,15 @@ class BusinessRoll extends React.Component {
                       />
                     </div>
                   ) : null}
-                  <p className="post-meta" style={{ marginTop: `1rem` }}>
+                  <div className="post-meta" style={{ marginTop: `1rem` }}>
                     <Link
                       className="title has-text-primary is-size-4"
                       to={post.fields.slug}
                     >
                       {post.frontmatter.title}
                     </Link>
-                  </p>
+                    <div className="openBusiness">{post.frontmatter.open === true ? (<div className="openYes">Open: Modified Hours</div>) : (<div className="openNo">Closed</div>)}</div>
+                  </div>
                 </header>
                 <div>
                   {post.frontmatter.tags && post.frontmatter.tags.length ? (
@@ -49,10 +50,10 @@ class BusinessRoll extends React.Component {
                       </ul>
                     </div>
                   ) : null}
-                  <Link className="button" to={post.fields.slug}>
-                    More Info →
-                  </Link>
                 </div>
+                <Link className="button" to={post.fields.slug}>
+                  More Info →
+                </Link>
               </article>
             </div>
           ))}
@@ -89,6 +90,7 @@ export default () => (
                 templateKey
                 date(formatString: "MMMM DD, YYYY")
                 tags
+                open
                 featuredimage {
                   childImageSharp {
                     fluid(maxWidth: 120, quality: 100) {
