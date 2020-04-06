@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet'
 import './all.sass'
 import useSiteMetadata from './SiteMetadata'
 import { withPrefix } from 'gatsby'
-import logo from '../img/logo2.svg'
+import logo from '../img/rallylogo.svg'
 
 const TemplateWrapper = ({ children }) => {
   const { title } = useSiteMetadata()
@@ -40,14 +40,14 @@ const TemplateWrapper = ({ children }) => {
 
         <meta property="og:type" content="business.business" />
         <meta property="og:title" content={title} />
-        <meta property="og:url" content="/" />
+        <meta property="og:url" content="https://rallycry.ca" />
         <meta
           property="og:image"
           content={`${withPrefix('/')}img/og-image.jpg`}
         />
       </Helmet>
-      <div style={{ margin: "20px auto", width: "300px" }}>
-        <img src={logo} alt="Rally Cry" style={{ width: '300px' }} /><br />
+      <div style={{ margin: "20px auto", width: "400px" }}>
+        <img src={logo} alt="Rally Cry" style={{ width: '400px' }} /><br />
         <p style={{  }}>Coming Soon</p>
       </div>
     </div>

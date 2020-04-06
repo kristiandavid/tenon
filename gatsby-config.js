@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: 'Rally Cry - Coming Soon',
+    title: 'Rally Cry - Support Hamilton Small Businesses',
     description:
-      'This repo contains an example business website that is built with Gatsby, and Netlify CMS.It follows the JAMstack architecture by using Git as a single source of truth, and Netlify for continuous deployment, and CDN distribution.',
+      'Rally Cry is a listing of small businesses in Hamilton, Ontario that you can support through COVID-19.',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -59,6 +59,60 @@ module.exports = {
         ],
       },
     },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Rally Cry`,
+        short_name: `RallyCry`,
+        start_url: `/`,
+        background_color: `#a13639`,
+        theme_color: `#a13639`,
+        display: `standalone`,
+        icons: [
+          {
+            "src": "img/icon-32x32.png",
+            "sizes": "32x32",
+            "type": "image/png"
+          },
+          {
+            "src": "img/icon-57x57.png",
+            "sizes": "57x57",
+            "type": "image/png"
+          },
+          {
+            "src": "img/icon-60x60.png",
+            "sizes": "60x60",
+            "type": "image/png"
+          },
+          {
+            "src": "img/icon-72x72.png",
+            "sizes": "72x72",
+            "type": "image/png"
+          },
+          {
+            "src": "img/icon-96x96.png",
+            "sizes": "96x96",
+            "type": "image/png"
+          },
+          {
+            "src": "img/icon-144x144.png",
+            "sizes": "144x144",
+            "type": "image/png"
+          },
+          {
+            "src": "img/icon-196x196.png",
+            "sizes": "196x196",
+            "type": "image/png"
+          },
+          {
+            "src": "img/icon-310x310.png",
+            "sizes": "310x310",
+            "type": "image/png"
+          }
+        ],
+      },
+    },
+    'gatsby-plugin-offline',
     {
       resolve: 'gatsby-plugin-netlify-cms',
       options: {

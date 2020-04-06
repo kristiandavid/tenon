@@ -4,7 +4,7 @@ import { kebabCase } from 'lodash'
 import { Link, graphql, StaticQuery } from 'gatsby'
 import PreviewCompatibleImage from './PreviewCompatibleImage'
 
-class BusinessRoll extends React.Component {
+class BusinessHomeRoll extends React.Component {
   render() {
     const { data } = this.props
     const { edges: posts } = data.allMarkdownRemark
@@ -12,35 +12,35 @@ class BusinessRoll extends React.Component {
     return (
       <div className="grid">
         {posts &&
-          posts.map(({ node: post }) => (
+          posts.slice(0,8).map(({ node: post }) => (
             <div className="is-parent" key={post.id}>
               <article
                 className={`business-list-item tile is-child box notification gridBusinessRoll`}
               >
-                <header>
-                  {post.frontmatter.featuredimage ? (
-                    <div className="featured-thumbnail">
-                      <PreviewCompatibleImage
-                        imageInfo={{
-                          image: post.frontmatter.featuredimage,
-                          alt: `featured image thumbnail for post ${post.frontmatter.title}`,
-                        }}
-                      />
-                    </div>
-                  ) : null}
-                  <div className="post-meta">
-                    <Link
-                      className="title has-text-primary is-size-4"
-                      to={post.fields.slug}
-                    >
-                      {post.frontmatter.title}
-                    </Link>
-                    <div className="openBusiness">{post.frontmatter.open === true ? (<div className="openYes">Open: Modified Hours</div>) : (<div className="openNo">Closed</div>)}</div>
+              <header>
+                {post.frontmatter.featuredimage ? (
+                  <div className="featured-thumbnail">
+                    <PreviewCompatibleImage
+                      imageInfo={{
+                        image: post.frontmatter.featuredimage,
+                        alt: `featured image thumbnail for post ${post.frontmatter.title}`,
+                      }}
+                    />
                   </div>
-                </header>
+                ) : null}
+                <div className="post-meta">
+                  <Link
+                    className="title has-text-primary is-size-4"
+                    to={post.fields.slug}
+                  >
+                    {post.frontmatter.title}
+                  </Link>
+                  <div className="openBusiness">{post.frontmatter.open === true ? (<div className="openYes">Open: Modified Hours</div>) : (<div className="openNo">Closed</div>)}</div>
+                </div>
+              </header>
                 <div>
                   {post.frontmatter.tags && post.frontmatter.tags.length ? (
-                    <div style={{ marginTop: `1rem` }}>
+                    <div>
                       <ul className="homeTaglist">
                         {post.frontmatter.tags.map(tag => (
                           <li key={tag + `tag`}>
@@ -62,7 +62,7 @@ class BusinessRoll extends React.Component {
   }
 }
 
-BusinessRoll.propTypes = {
+BusinessHomeRoll.propTypes = {
   data: PropTypes.shape({
     allMarkdownRemark: PropTypes.shape({
       edges: PropTypes.array,
@@ -73,9 +73,9 @@ BusinessRoll.propTypes = {
 export default () => (
   <StaticQuery
     query={graphql`
-      query BusinessRollQuery {
+      query BusinessHomeRollQuery {
         allMarkdownRemark(
-          sort: { order: ASC, fields: [frontmatter___title] }
+          sort: { order: DESC, fields: [frontmatter___date] }
           filter: { frontmatter: { templateKey: { eq: "business-post" } } }
         ) {
           edges {
@@ -104,6 +104,6 @@ export default () => (
         }
       }
     `}
-    render={(data, count, limit) => <BusinessRoll data={data} count={count} />}
+    render={(data, count, limit) => <BusinessHomeRoll data={data} count={count} />}
   />
 )
