@@ -23,8 +23,8 @@ $black: #2b2523
   justify-content: left
   align-items: center
   li
-    padding: 0 1rem 1rem 0
-    margin-bottom: 1.5rem
+    padding: 0 1rem .25rem 0
+    margin-bottom: 0
     margin-top: 0
 
 .content .taglist
@@ -84,6 +84,12 @@ $black: #2b2523
 
 .margin-top-0
   margin-top: 0 !important
+
+a.navbar-item
+  color: $tenon-red
+a.navbar-item:hover
+  color: #000 !important
+  text-decoration: underline
 
 .navbar-item .icon
   color: $primary
@@ -159,10 +165,16 @@ $menu-label-color: $white-ter
 
 .grid
   display: grid
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr))
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr))
   grid-gap: 20px
   .is-child
     height: 100%
+
+  .openBusiness
+    display: block
+    margin-left: 0
+    text-decoration: none
+    font-size: 1rem
 
 
 .tagsList
@@ -183,7 +195,7 @@ $menu-label-color: $white-ter
 
 .content .categoriesTags
   display: grid
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr))
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr))
   grid-gap: 1.25rem
 
   li
@@ -202,25 +214,75 @@ $menu-label-color: $white-ter
 .openBusiness
   margin-bottom: 2rem
   font-weight: bold
-  font-size: 1.5rem
+  font-size: 1.25rem
   display: inline-block
   margin-left: 1rem
   .openYes
-    color: #62CB6D
+    color: #46964e
   .openNo
     color: $tenon-red
 
 
 .businessPageGrid
+  display: grid;
+  grid-template-columns: 1fr
+  @media (min-width: 37.5rem)
+    grid-template-columns: repeat(2, 1fr)
   .title:not(:last-child)
     margin-bottom: 0
 
+  a
+    color: $tenon-red
+    text-decoration: underline
+
+  .col1
+    grid-column: 1/-1
+    display: grid
+    grid-gap: 0 1rem
+    grid-template-columns: auto 1fr
+    grid-template-rows: auto 1fr
+    margin-bottom: 1.2rem
+
+    img
+      grid-column: 1/2
+      grid-row: 1/-1
+      margin: 0
+
+    .title
+      margin: 0
+
+    .openBusiness
+      margin: 0
+
+  .col3
+    h4
+      margin-bottom: 0
+    .taglist
+      margin-top: 1rem
+
+  .businessImg
+    width: 6.25rem
+    margin-right: 1rem
+
 .businessTextSection
-  margin-bottom: 2rem
+  margin-bottom: 1.25rem
   h2
-    font-size: 1.25rem
+    font-size: 1.125rem
+    margin-bottom: 0
 
 .productMapLink
   display: block
   a
     color: $tenon-red
+
+
+.gridBusinessRoll
+  display: grid
+  grid-template-rows: 1fr repeat(2, auto)
+  grid-gap: 1rem
+
+  .homeTaglist
+    margin: 0
+
+  .button
+    align-self: end

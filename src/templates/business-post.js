@@ -25,11 +25,16 @@ export const BusinessPostTemplate = ({
   additionalInfo
 }) => {
   const mapLink = `https://www.google.com/maps/place/${address}`
-  const BusinessPostText = ({ theContent, leadingText, address=false}) => {
+  const BusinessPostText = ({ theContent, leadingText, address=false, website=false}) => {
     return (
       theContent !== null ?
         (
-          <div className="businessTextSection"><h2>{leadingText}</h2> {theContent}{address === true ? (
+          <div className="businessTextSection"><h2>{leadingText}</h2>
+            <div
+            className="blog-post-content"
+            dangerouslySetInnerHTML={{ __html: theContent }}
+          />
+          {address === true ? (
              <div className="productMapLink"><a href={mapLink} target="_blank" rel="noopener noreferrer">View Map</a></div>
         ) : null}</div>
         )
@@ -43,22 +48,35 @@ export const BusinessPostTemplate = ({
       <div className="container content">
         <div className="columns">
           <div className="column is-12 businessPageGrid">
-            <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
-              {title}
-              <div className="openBusiness">{open === true ? (<div className="openYes">Open</div>) : (<div className="openNo">Closed</div>)}</div>
-            </h1>
 
-            <BusinessPostText theContent={address} leadingText="Address" address={true} />
-            <BusinessPostText theContent={website} leadingText="Website" />
-            <BusinessPostText theContent={phone} leadingText="Phone" />
-            <BusinessPostText theContent={otherContact} leadingText="Other Contact Info" />
-            <BusinessPostText theContent={hours} leadingText="Hours" />
-            <BusinessPostText theContent={rules} leadingText="Rules to follow when visiting the store" />
-            <BusinessPostText theContent={support} leadingText="Other ways you can support us" />
-            <BusinessPostText theContent={additionalInfo} leadingText="Additional Info" />
+            <div className="col1">
+              <img className="businessImg" src={!!featuredimage.childImageSharp ? featuredimage.childImageSharp.fluid.src : featuredimage} alt={title} />
+              <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
+                {title}
+              </h1>
+              <div className="openBusiness">{open === true ? (<div className="openYes">Open: Modified Hours</div>) : (<div className="openNo">Closed</div>)}</div>
+            </div>
+
+            <div className="col2">
+              <BusinessPostText theContent={address} leadingText="Address" address={true} />
+              {website !== null ? (
+                <div className="businessTextSection"><h2>Website</h2>
+                  <a href={website} target="_blank" rel="noopener noreferrer">{website}</a>
+                </div>
+                ) : null}
+              <BusinessPostText theContent={phone} leadingText="Phone" />
+              <BusinessPostText theContent={otherContact} leadingText="Other ways to get in touch" />
+            </div>
+
+            <div className="col3">
+              <BusinessPostText theContent={hours} leadingText="Hours" />
+              <BusinessPostText theContent={rules} leadingText="Rules to follow when visiting the store" />
+              <BusinessPostText theContent={support} leadingText="Other ways you can support us" />
+              <BusinessPostText theContent={additionalInfo} leadingText="Additional Info" />
+            </div>
 
             {tags && tags.length ? (
-              <div style={{ marginTop: `4rem` }}>
+              <div className="col3" style={{ marginTop: `2rem` }}>
                 <h4>Categories</h4>
                 <ul className="taglist">
                   {tags.map(tag => (
@@ -69,8 +87,6 @@ export const BusinessPostTemplate = ({
                 </ul>
               </div>
             ) : null}
-
-            <img src={!!featuredimage.childImageSharp ? featuredimage.childImageSharp.fluid.src : featuredimage} alt={title} />
           </div>
         </div>
       </div>
@@ -98,7 +114,6 @@ BusinessPostTemplate.propTypes = {
 
 const BusinessPost = ({ data }) => {
   const { markdownRemark: post } = data
-  console.log("data: ", post);
 
   return (
     <Layout>
