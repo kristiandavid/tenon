@@ -77,6 +77,11 @@ export const IndexPageTemplate = ({
                     <div className="tile">
                       <p style={{ fontSize: `1.2rem` }}>{mainpitch.description}</p>
                     </div>
+                    <div className="tile">
+                      <p style={{ fontSize: `1.2rem`, display: `block`, marginTop: `1rem` }}>
+                        This site is very new, and we're trying to add as many businesses as quickly as possible. If you're a small business owner, please feel free to fill out <Link style={{ textDecoration: `underline`, color: `#A13639` }} to="/contact">this form</Link> and we'll be updating the site every 24 hours on average.
+                      </p>
+                    </div>
                   </div>
 
                 <div className="columns">
