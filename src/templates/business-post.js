@@ -70,7 +70,6 @@ export const BusinessPostTemplate = ({
                   <a href={phoneLink}>{phone}</a>
                 </div>
                 ) : null}
-              <BusinessPostText theContent={phone} leadingText="Phone" />
               <BusinessPostText theContent={otherContact} leadingText="Other ways to get in touch" />
             </div>
 

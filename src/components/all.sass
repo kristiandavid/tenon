@@ -104,6 +104,9 @@ footer.footer
   padding: 1rem 0rem
   background-color: transparent
 
+  .columns
+    margin-right: 0
+
 //Menu overrides
 $menu-item-color: $white-ter
 $menu-item-hover-color: $black !important
@@ -196,9 +199,9 @@ $menu-label-color: $white-ter
 .content .categoriesTags
   display: grid
   grid-template-columns: 1fr
+  grid-gap: 1.25rem
   @media (min-width: 37.5rem)
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))
-  grid-gap: 1.25rem
 
   li
     border-left: 1px solid #ccc
