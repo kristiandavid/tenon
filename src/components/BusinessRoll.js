@@ -75,7 +75,7 @@ export default () => (
     query={graphql`
       query BusinessRollQuery {
         allMarkdownRemark(
-          sort: { order: DESC, fields: [frontmatter___date] }
+          sort: { order: ASC, fields: [frontmatter___title] }
           filter: { frontmatter: { templateKey: { eq: "business-post" } } }
         ) {
           edges {

@@ -17,26 +17,27 @@ class BusinessHomeRoll extends React.Component {
               <article
                 className={`business-list-item tile is-child box notification gridBusinessRoll`}
               >
-                <header>
-                  {post.frontmatter.featuredimage ? (
-                    <div className="featured-thumbnail">
-                      <PreviewCompatibleImage
-                        imageInfo={{
-                          image: post.frontmatter.featuredimage,
-                          alt: `featured image thumbnail for post ${post.frontmatter.title}`,
-                        }}
-                      />
-                    </div>
-                  ) : null}
-                  <p className="post-meta" style={{ marginTop: `1rem` }}>
-                    <Link
-                      className="title has-text-primary is-size-4"
-                      to={post.fields.slug}
-                    >
-                      {post.frontmatter.title}
-                    </Link>
-                  </p>
-                </header>
+              <header>
+                {post.frontmatter.featuredimage ? (
+                  <div className="featured-thumbnail">
+                    <PreviewCompatibleImage
+                      imageInfo={{
+                        image: post.frontmatter.featuredimage,
+                        alt: `featured image thumbnail for post ${post.frontmatter.title}`,
+                      }}
+                    />
+                  </div>
+                ) : null}
+                <div className="post-meta" style={{ marginTop: `1rem` }}>
+                  <Link
+                    className="title has-text-primary is-size-4"
+                    to={post.fields.slug}
+                  >
+                    {post.frontmatter.title}
+                  </Link>
+                  <div className="openBusiness">{post.frontmatter.open === true ? (<div className="openYes">Open: Modified Hours</div>) : (<div className="openNo">Closed</div>)}</div>
+                </div>
+              </header>
                 <div>
                   {post.frontmatter.tags && post.frontmatter.tags.length ? (
                     <div>
@@ -89,6 +90,7 @@ export default () => (
                 templateKey
                 date(formatString: "MMMM DD, YYYY")
                 tags
+                open
                 featuredimage {
                   childImageSharp {
                     fluid(maxWidth: 120, quality: 100) {

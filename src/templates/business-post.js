@@ -25,6 +25,7 @@ export const BusinessPostTemplate = ({
   additionalInfo
 }) => {
   const mapLink = `https://www.google.com/maps/place/${address}`
+  const phoneLink = `tel:${phone}`
   const BusinessPostText = ({ theContent, leadingText, address=false, website=false}) => {
     return (
       theContent !== null ?
@@ -64,7 +65,11 @@ export const BusinessPostTemplate = ({
                   <a href={website} target="_blank" rel="noopener noreferrer">{website}</a>
                 </div>
                 ) : null}
-              <BusinessPostText theContent={phone} leadingText="Phone" />
+              {phone !== null ? (
+                <div className="businessTextSection"><h2>Phone</h2>
+                  <a href={phoneLink}>{phone}</a>
+                </div>
+                ) : null}
               <BusinessPostText theContent={otherContact} leadingText="Other ways to get in touch" />
             </div>
 

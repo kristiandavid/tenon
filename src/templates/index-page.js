@@ -22,6 +22,8 @@ export const IndexPageTemplate = ({
         })`,
         backgroundPosition: `center center`,
         backgroundAttachment: `fixed`,
+        backgroundSize: `cover`,
+        marginBottom: `20px`
       }}
     >
       <div
@@ -62,7 +64,7 @@ export const IndexPageTemplate = ({
         </h3>
       </div>
     </div>
-    <section className="section section--gradient">
+    <section className="section section--gradient" style={{ padding:0 }}>
       <div className="container">
         <div className="section" style={{paddingTop: 0}}>
           <div className="columns">
@@ -74,13 +76,13 @@ export const IndexPageTemplate = ({
                       <h1 className="title">{mainpitch.title}</h1>
                     </div>
                     <div className="tile">
-                      <h3 className="subtitle">{mainpitch.description}</h3>
+                      <p style={{ fontSize: `1.2rem` }}>{mainpitch.description}</p>
                     </div>
                   </div>
 
                 <div className="columns">
                   <div className="column is-12">
-                    <h3 className="has-text-weight-semibold is-size-2">
+                    <h3 className="has-text-weight-semibold">
                       Latest Businesses Updated
                     </h3>
                     <BusinessHomeRoll />
