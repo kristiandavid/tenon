@@ -51,6 +51,7 @@ const Navbar = class extends React.Component {
               onKeyPress={this.handleKeyPress}
               role="button"
               tabIndex={0}
+              aria-label="Menu"
             >
               <span />
               <span />
