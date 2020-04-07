@@ -1,18 +1,64 @@
 import React from 'react'
 import Helmet from 'react-helmet'
+import { kebabCase } from 'lodash'
 import { Link, graphql } from 'gatsby'
 import Layout from '../components/Layout'
+import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 
 class TagRoute extends React.Component {
   render() {
     const posts = this.props.data.allMarkdownRemark.edges
-    const postLinks = posts.map(post => (
-      <li key={post.node.fields.slug}>
-        <Link to={post.node.fields.slug}>
-          <h2>{post.node.frontmatter.title}</h2>
+    const postHTML = posts.map(post => (
+      <article
+        className={`business-list-item tile is-child box notification gridBusinessRoll`}
+      >
+        <header>
+          {post.node.frontmatter.featuredimage ? (
+            <div className="featured-thumbnail">
+              <PreviewCompatibleImage
+                imageInfo={{
+                  image: post.node.frontmatter.featuredimage,
+                  alt: `featured image thumbnail for post ${post.node.frontmatter.title}`,
+                }}
+              />
+            </div>
+          ) : null}
+          <div className="post-meta">
+            <Link
+              className="title has-text-primary is-size-4"
+              to={post.node.fields.slug}
+            >
+              {post.node.frontmatter.title}
+            </Link>
+            <div className="openBusiness">{post.node.frontmatter.open === true ? (<div className="openYes">Open: Modified Hours</div>) : (<div className="openNo">Closed</div>)}</div>
+          </div>
+        </header>
+        <div>
+          {post.node.frontmatter.tags && post.node.frontmatter.tags.length ? (
+            <div style={{ marginTop: `1rem` }}>
+              <ul className="homeTaglist">
+                {post.node.frontmatter.tags.map(tag => (
+                  <li key={tag + `tag`}>
+                    <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ) : null}
+        </div>
+        <Link className="button" to={post.node.fields.slug}>
+          More Info →
         </Link>
-      </li>
+      </article>
     ))
+
+    // const postLinks = posts.map(post => (
+    //   <li key={post.node.fields.slug}>
+    //     <Link to={post.node.fields.slug}>
+    //       <h2>{post.node.frontmatter.title}</h2>
+    //     </Link>
+    //   </li>
+    // ))
     const tag = this.props.pageContext.tag
     const title = this.props.data.site.siteMetadata.title
     const totalCount = this.props.data.allMarkdownRemark.totalCount
@@ -32,7 +78,7 @@ class TagRoute extends React.Component {
               >
                 <h1 className="title is-size-2 is-bold-light tagsH1">{tagHeader}</h1>
                 <p className="allTags"><Link to="/tags/">Browse all tags</Link></p>
-                <ul className="taglist categoriesTags">{postLinks}</ul>
+                <div className="grid">{postHTML}</div>
               </div>
             </div>
           </div>
@@ -64,8 +110,16 @@ export const tagPageQuery = graphql`
           }
           frontmatter {
             title
+            templateKey
+            date(formatString: "MMMM DD, YYYY")
+            tags
+            open
             featuredimage {
-              id
+              childImageSharp {
+                fluid(maxWidth: 120, quality: 100) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
             }
           }
         }

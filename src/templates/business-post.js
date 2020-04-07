@@ -28,7 +28,7 @@ export const BusinessPostTemplate = ({
   const phoneLink = `tel:${phone}`
   const BusinessPostText = ({ theContent, leadingText, address=false, website=false}) => {
     return (
-      theContent !== null ?
+      theContent !== "" ?
         (
           <div className="businessTextSection"><h2>{leadingText}</h2>
             <div

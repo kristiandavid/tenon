@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: 'Rally Cry - Support Hamilton Small Businesses',
     description:
-      'Rally Cry is a listing of small businesses in Hamilton, Ontario that you can support throughh COVID-19.',
+      'Rally Cry is a listing of small businesses in Hamilton, Ontario that you can support through COVID-19.',
   },
   plugins: [
     'gatsby-plugin-react-helmet',

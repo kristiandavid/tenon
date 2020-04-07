@@ -23,16 +23,16 @@ collections:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "business-post"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Featured Image", name: "featuredimage", widget: image, default: false}
-      - {label: "Open", name: "open", widget: "boolean", default: false}
-      - {label: "Address", name: "address", widget: "string", default: false}
-      - {label: "Website", name: "website", widget: "string", default: false}
-      - {label: "Phone", name: "phone", widget: "string", default: false}
-      - {label: "Other Contact methods", name: "otherContact", widget: "markdown", default: false}
-      - {label: "Hours", name: "hours", widget: "markdown", default: false}
-      - {label: "Shop Rules", name: "rules", widget: "markdown", default: false}
-      - {label: "Ways to Support", name: "support", widget: "markdown", default: false}
-      - {label: "Additional Info", name: "additionalInfo", widget: "markdown", default: false}
+      - {label: "Featured Image", name: "featuredimage", widget: image, default: null}
+      - {label: "Open", name: "open", widget: "boolean"}
+      - {label: "Address", name: "address", widget: "string", default: null}
+      - {label: "Website", name: "website", widget: "string", default: null}
+      - {label: "Phone", name: "phone", widget: "string", default: null}
+      - {label: "Other Contact methods", name: "otherContact", widget: "markdown", default: null}
+      - {label: "Hours", name: "hours", widget: "markdown", default: null}
+      - {label: "Shop Rules", name: "rules", widget: "markdown", default: null}
+      - {label: "Ways to Support", name: "support", widget: "markdown", default: null}
+      - {label: "Additional Info", name: "additionalInfo", widget: "markdown", default: null}
       - {label: "Tags", name: "tags", widget: "list"}
 
   - name: "pages"

@@ -28,7 +28,7 @@ class BusinessRoll extends React.Component {
                       />
                     </div>
                   ) : null}
-                  <div className="post-meta" style={{ marginTop: `1rem` }}>
+                  <div className="post-meta">
                     <Link
                       className="title has-text-primary is-size-4"
                       to={post.fields.slug}
