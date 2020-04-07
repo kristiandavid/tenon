@@ -8,9 +8,9 @@ address: '182 Ottawa St N, Hamilton, ON L8H 3Z5'
 website: 'http://murraysfarm.ca'
 phone: 905-393-1380
 otherContact: 'Instagram <a href="https://instagram.com/murraysfarmbutchershoppe">@murraysfarmbutchershoppe</a>'
-hours: 'Monday to Sunday'
-rules: '1 person in the store at a time. Must wear gloves.'
-support: ''
+hours: 'Mon-Fri: 12-6 / Sat: 9-6 / Sun: 10-5'
+rules: '1 person in the store at a time. Must wear gloves. '
+support: 'Sidewalk pickup available'
 additionalInfo: ''
 tags:
   - Groceries
