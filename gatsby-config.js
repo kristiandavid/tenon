@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: 'Rally Cry - Support Hamilton Small Businesses',
     description:
-      'This repo contains an example business website that is built with Gatsby, and Netlify CMS.It follows the JAMstack architecture by using Git as a single source of truth, and Netlify for continuous deployment, and CDN distribution.',
+      'Rally Cry is a listing of small businesses in Hamilton, Ontario that you can support throughh COVID-19.',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
