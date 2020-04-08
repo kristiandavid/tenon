@@ -1,17 +1,19 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
+import Footer from '../components/Footer'
+import Navbar from '../components/Navbar'
 import './all.sass'
 import useSiteMetadata from './SiteMetadata'
 import { withPrefix } from 'gatsby'
-import logo from '../img/rallylogo.svg'
 
 const TemplateWrapper = ({ children }) => {
-  const { title } = useSiteMetadata()
+  const { title, description } = useSiteMetadata()
   return (
     <div>
       <Helmet>
         <html lang="en" />
         <title>{title}</title>
+        <meta name="description" content={description} />
 
         <link
           rel="apple-touch-icon"
@@ -36,20 +38,19 @@ const TemplateWrapper = ({ children }) => {
           href={`${withPrefix('/')}img/safari-pinned-tab.svg`}
           color="#A13639"
         />
-        <meta name="theme-color" content="#fff" />
+        <meta name="theme-color" content="#A13639" />
 
         <meta property="og:type" content="business.business" />
         <meta property="og:title" content={title} />
-        <meta property="og:url" content="/" />
+        <meta property="og:url" content="https://rallycry.ca" />
         <meta
           property="og:image"
           content={`${withPrefix('/')}img/og-image.jpg`}
         />
       </Helmet>
-      <div style={{ margin: "20px auto", width: "400px" }}>
-        <img src={logo} alt="Rally Cry" style={{ width: '400px' }} /><br />
-        <p style={{  }}>Coming Soon</p>
-      </div>
+      <Navbar />
+      <div>{children}</div>
+      <Footer />
     </div>
   )
 }
