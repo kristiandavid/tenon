@@ -30,6 +30,6 @@ additionalInfo: >-
   it is placed in boxes to be ready for delivery. The van in which the product
   is delivered is sanitized before and after each delivery.
 tags:
-  - food
-  - bakery
+  - Food
+  - Bakery
 ---
