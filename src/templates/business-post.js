@@ -51,7 +51,7 @@ export const BusinessPostTemplate = ({
           <div className="column is-12 businessPageGrid">
 
             <div className="col1">
-              <img className="businessImg" src={!!featuredimage.childImageSharp ? featuredimage.childImageSharp.fluid.src : featuredimage} alt={title} />
+              {featuredimage && <img className="businessImg" src={!!featuredimage.childImageSharp ? featuredimage.childImageSharp.fluid.src : featuredimage} alt={title} />}
               <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
                 {title}
               </h1>
