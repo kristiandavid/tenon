@@ -8,10 +8,14 @@ module.exports = {
   plugins: [
     'gatsby-plugin-react-helmet',
     {
-      resolve: `gatsby-plugin-google-analytics`,
+      resolve: "gatsby-plugin-google-tagmanager",
       options: {
-        trackingId: "UA-163130243-1",
-      },
+        id: "GTM-TRVX64B",
+
+        // Include GTM in development.
+        // Defaults to false meaning GTM will only be loaded in production.
+        includeInDevelopment: true
+      }
     },
     'gatsby-plugin-sass',
     {
@@ -78,42 +82,37 @@ module.exports = {
         display: `standalone`,
         icons: [
           {
-            "src": "img/icon-32x32.png",
+            "src": "img/favicon-32x32.png",
             "sizes": "32x32",
             "type": "image/png"
           },
           {
-            "src": "img/icon-57x57.png",
+            "src": "img/apple-touch-icon-57x57.png",
             "sizes": "57x57",
             "type": "image/png"
           },
           {
-            "src": "img/icon-60x60.png",
+            "src": "img/apple-touch-icon-60x60.png",
             "sizes": "60x60",
             "type": "image/png"
           },
           {
-            "src": "img/icon-72x72.png",
+            "src": "img/apple-touch-icon-72x72.png",
             "sizes": "72x72",
             "type": "image/png"
           },
           {
-            "src": "img/icon-96x96.png",
+            "src": "img/favicon-96x96.png",
             "sizes": "96x96",
             "type": "image/png"
           },
           {
-            "src": "img/icon-144x144.png",
+            "src": "img/apple-touch-icon-144x144.png",
             "sizes": "144x144",
             "type": "image/png"
           },
           {
-            "src": "img/icon-196x196.png",
-            "sizes": "196x196",
-            "type": "image/png"
-          },
-          {
-            "src": "img/icon-310x310.png",
+            "src": "img/mstile-310x310.png",
             "sizes": "310x310",
             "type": "image/png"
           }

@@ -10,7 +10,7 @@ const TemplateWrapper = ({ children }) => {
   const { title, description } = useSiteMetadata()
   return (
     <div>
-      <Helmet>
+      <Helmet defer={false}>
         <html lang="en" />
         <title>{title}</title>
         <meta name="description" content={description} />

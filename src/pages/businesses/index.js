@@ -1,4 +1,5 @@
 import React from 'react'
+import Helmet from 'react-helmet'
 
 import Layout from '../../components/Layout'
 import BusinessRoll from '../../components/BusinessRoll'
@@ -8,6 +9,12 @@ export default class BusinessIndexPage extends React.Component {
     return (
       <Layout>
         <section className="section">
+          <Helmet titleTemplate="Businesses | Rally Cry" defer={false}>
+            <meta
+              name="description"
+              content={`The complete list of small businesses we have on the site so far. Rally Cry is a listing of small businesses in Hamilton, Ontario that you can support through COVID-19.`}
+            />
+          </Helmet>
           <div className="container">
             <h1
               className="has-text-weight-bold is-size-1"
