@@ -127,12 +127,17 @@ const BusinessPost = ({ data }) => {
         contentComponent={HTMLContent}
         description={post.frontmatter.description}
         helmet={
-          <Helmet titleTemplate="%s | Businesses">
+          <Helmet titleTemplate="%s | Rally Cry" defer={false}>
             <title>{`${post.frontmatter.title}`}</title>
             <meta
               name="description"
-              content={`${post.frontmatter.description}`}
+              content={`${post.frontmatter.title} on Rally Cry. Rally Cry is a listing of small businesses in Hamilton, Ontario that you can support through COVID-19.`}
             />
+            <meta content="@kristiandavid" name="twitter:creator" />
+            <meta content="summary" name="twitter:card" />
+            <meta content={post.frontmatter.title} name="twitter:title" />
+            <meta content={`${post.frontmatter.title} on Rally Cry. Rally Cry is a listing of small businesses in Hamilton, Ontario that you can support through COVID-19.`} name="twitter:description" />
+            <meta content={post.frontmatter.featuredimage ? post.frontmatter.featuredimage.childImageSharp.fluid.src : "/img/mstile-310x310"} name="twitter:image" />
           </Helmet>
         }
         tags={post.frontmatter.tags}

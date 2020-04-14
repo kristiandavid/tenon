@@ -61,6 +61,7 @@ class TagRoute extends React.Component {
     // ))
     const tag = this.props.pageContext.tag
     const title = this.props.data.site.siteMetadata.title
+    const description = this.props.data.site.siteMetadata.description
     const totalCount = this.props.data.allMarkdownRemark.totalCount
     const tagHeader = `${totalCount} business${
       totalCount === 1 ? '' : 'es'
@@ -69,7 +70,12 @@ class TagRoute extends React.Component {
     return (
       <Layout>
         <section className="section">
-          <Helmet title={`${tag} | ${title}`} />
+          <Helmet title={`${tag} | ${title}`} defer={false}>
+            <meta
+              name="description"
+              content={`A listing of businesses in Hamitlon categorized under the term "${tag}". ${description}`}
+            />
+          </Helmet>
           <div className="container content">
             <div className="columns">
               <div
@@ -94,7 +100,8 @@ export const tagPageQuery = graphql`
   query TagPage($tag: String) {
     site {
       siteMetadata {
-        title
+        title,
+        description
       }
     }
     allMarkdownRemark(
