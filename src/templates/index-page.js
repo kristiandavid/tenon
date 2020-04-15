@@ -72,7 +72,7 @@ export const IndexPageTemplate = ({
 
                   <div className="content">
                     <div className="tile">
-                      <h1 className="title">{mainpitch.title}</h1>
+                      <h2 className="title">{mainpitch.title}</h2>
                     </div>
                     <div className="tile">
                       <p style={{ fontSize: `1.2rem` }}>{mainpitch.description}</p>
@@ -86,9 +86,9 @@ export const IndexPageTemplate = ({
 
                 <div className="columns">
                   <div className="column is-12">
-                    <h3 className="has-text-weight-semibold">
+                    <h2 className="has-text-weight-semibold">
                       Latest Businesses Updated
-                    </h3>
+                    </h2>
                     <BusinessHomeRoll />
                     <div className="column is-12 has-text-centered indexAllBusinesses">
                       <Link className="btn" to="/businesses">

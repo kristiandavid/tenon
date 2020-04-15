@@ -3,10 +3,11 @@ module.exports = {
     siteUrl: `https://rallycry.ca`,
     title: 'Rally Cry - Support Hamilton Small Businesses',
     description:
-      'Rally Cry is a listing of small businesses in Hamilton, Ontario that you can support through COVID-19.',
+      'Rally Cry is a listing of small businesses in Hamilton, Ontario that you can support during the COVID-19 pandemic.',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
+    'gatsby-plugin-robots-txt',
     {
       resolve: "gatsby-plugin-google-tagmanager",
       options: {
@@ -14,7 +15,7 @@ module.exports = {
 
         // Include GTM in development.
         // Defaults to false meaning GTM will only be loaded in production.
-        includeInDevelopment: true
+        includeInDevelopment: false
       }
     },
     'gatsby-plugin-sass',
