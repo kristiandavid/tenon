@@ -3,6 +3,7 @@ templateKey: business-post
 title: Ka'Kau Chocolate Company
 date: 2020-04-17T21:05:36.516Z
 featuredimage: /img/kakau.jpg
+open: true
 address: '1203 Cannon St E, Hamilton, ON L8H 1T8'
 website: 'https://www.kakau.ca/'
 phone: (289) 389-5700
