@@ -9,11 +9,11 @@ website: 'https://www.kakau.ca/'
 phone: (289) 389-5700
 otherContact: >-
   Instagram: <a
-  href="<https://www.instagram.com/kakauchocolatecompany/>">@[kakauchocolatecompany](https://www.instagram.com/kakauchocolatecompany/)</a><br>
+  href="https://www.instagram.com/kakauchocolatecompany/">@kakauchocolatecompany</a><br>
 
 
   Facebook: <a
-  href="<https://www.facebook.com/KaKauChocolateCompany/>"><https://www.facebook.com/KaKauChocolateCompany/></a><br>
+  href="https://www.facebook.com/KaKauChocolateCompany/">https://www.facebook.com/KaKauChocolateCompany</a><br>
 
 
   Email: kakau@gmail.com
