@@ -16,7 +16,7 @@ otherContact: >-
 
 
   Twitter: <a href="https://twitter.com/541Barton">@541Barton</a>
-hours: 'Mon - Sat: 11am-12pm.  Sunday: closed'
+hours: 'Mon - Sat: 8am-12pm.  Sunday: closed'
 rules: >-
   While our cafe is closed to wait out the COVID-19 threat, the 541 staff will
   be at the door handing out free sack lunches to anyone who needs one,
